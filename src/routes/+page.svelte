@@ -45,7 +45,7 @@
             </li>
             <li class="md:col-span-4">
                 <label for="birthdate">Birthdate <span class="text-red-500">*</span></label>
-                <input type="date" id="birthdate" name="birthdate" required>
+                <input class="w-full" type="date" id="birthdate" name="birthdate" required>
             </li>
             <li class="md:col-span-4">
                 <label for="gender">Gender <span class="text-red-500">*</span></label>
@@ -109,13 +109,9 @@
                 <input type="text" id="address" name="address" placeholder="Block 20 Lot 21, MSC Street, Brgy. Xoft, Malolos City, Bulacan" required>
             </li>
 
-            <li class="md:col-span-6">
+            <li class="md:col-span-12">
                 <label for="reference_number">Reference Number <span class="text-red-500">*</span></label>
                 <input type="text" id="reference_number" name="reference_number" required>
-            </li>
-            <li class="md:col-span-6">
-                <label for="receipt_number">Receipt Number <span class="text-red-500">*</span></label>
-                <input type="text" id="receipt_number" name="receipt_number" required>
             </li>
 
         </ul>
