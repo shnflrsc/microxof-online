@@ -28,7 +28,6 @@ export const actions: Actions = {
     const contactNumber = formData.get("contact_number")?.toString() ?? "";
     const address = formData.get("address")?.toString() ?? "";
     const referenceNumber = formData.get("reference_number")?.toString() ?? "";
-    const receiptNumber = formData.get("receipt_number")?.toString() ?? "";
 
     if (suffix === "") {
       suffix = null;
@@ -52,7 +51,6 @@ export const actions: Actions = {
         contactNumber: contactNumber,
         address: address,
         referenceNumber: referenceNumber,
-        receiptNumber: receiptNumber,
     };
 
       const insertedRows = await db.insert(registrationsTable).values(newRegistration).returning();
