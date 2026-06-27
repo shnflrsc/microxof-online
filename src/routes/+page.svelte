@@ -111,6 +111,7 @@
 
             <li class="md:col-span-12">
                 <label for="reference_number">Reference Number <span class="text-red-500">*</span></label>
+                <p class="text-sm text-gray-500">Enter your GCash reference number. Membership application will be terminated if the reference number is invalid.</p>
                 <input type="text" id="reference_number" name="reference_number" required>
             </li>
 
