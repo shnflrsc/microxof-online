@@ -7,6 +7,6 @@ export const ratelimit = new Ratelimit({
     url: env.UPSTASH_REDIS_REST_URL,
     token: env.UPSTASH_REDIS_REST_TOKEN,
   }),
-  limiter: Ratelimit.slidingWindow(30, "10 s"),
+  limiter: Ratelimit.slidingWindow(5, "60 s"),
   prefix: "@upstash/ratelimit",
 });
