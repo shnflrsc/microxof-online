@@ -56,7 +56,6 @@ export const registrations = pgTable("registrations", {
   contactNumber: varchar("contact_number", { length: 11 }).notNull(),
   address: text("address").notNull(),
   referenceNumber: text("reference_number").notNull(),
-  receiptNumber: text("receipt_number").unique().notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 });
 
