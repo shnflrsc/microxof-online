@@ -61,25 +61,20 @@ export const actions: Actions = {
       if (!insertedRows || insertedRows.length === 0) {
         return fail(500, {
           success: false,
-          message: "The database accepted the query but did not save the record.",
+          message: "Registration failed. Please try again.",
         });
       }
 
       return {
         success: true,
-        message: "You have successfully registered.",
+        message: "Registration successful!",
       };
     } catch (error: unknown) {
       console.error("CRITICAL DRIZZLE ERROR:", error);
 
-      const errorMessage =
-        error instanceof Error
-          ? String((error as Error & { cause?: unknown }).cause ?? error.message)
-          : "Unknown error";
-
       return fail(500, {
         success: false,
-        message: `Registration failed: ${errorMessage}`,
+        message: "Registration failed. Please try again.",
       });
     }
   },

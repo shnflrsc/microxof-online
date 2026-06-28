@@ -1,15 +1,32 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
+    import qrCode from "$lib/assets/qr_code.png";
+
     let { form } = $props();
+    let isSubmitting = $state(false);
+
+    const handleEnhance = () => {
+        isSubmitting = true;
+
+        return async ({ update }: { update: () => Promise<void> }) => {
+            try {
+                await update();
+            } finally {
+                isSubmitting = false;
+            }
+        };
+    };
 </script>
 
 <svelte:head>
     <title>MicroXof</title>
 </svelte:head>
 
-<main class="p-8">
+<main class="p-8 items-center">
 
-    <form class="w-11/12 place-self-center" method="post" action="?/submit" use:enhance>
+    <img class="w-10/12 md:w-3/12 mb-8 place-self-center" src={qrCode} alt="QR Code">
+
+    <form class="w-11/12 place-self-center" method="post" action="?/submit" use:enhance={handleEnhance}>
 
         <ul class="grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-x-2 gap-y-2 *:flex *:flex-col *:gap-y-2">
 
@@ -117,14 +134,27 @@
 
         </ul>
 
-        <input class="py-3 px-2 bg-blue-600 text-white font-bold w-full mt-8 hover:bg-blue-700 duration-200 cursor-pointer" type="submit" value="Register">
-
-        {#if form?.success}
-            <p class="text-green-600 font-bold mt-4">{form.message}</p>
-        {/if}
-        {#if form?.success === false}
-            <p class="text-red-600 font-bold mt-4">{form.message}</p>
-        {/if}
+        <button
+            class={`py-3 px-2 text-white font-bold w-full mt-8 duration-200 ${
+                isSubmitting
+                    ? "bg-slate-500 cursor-not-allowed"
+                    : form?.success === true
+                        ? "bg-green-500 hover:bg-green-600 cursor-pointer"
+                        : form?.success === false
+                            ? "bg-red-500 hover:bg-red-600 cursor-pointer"
+                            : "bg-blue-600 hover:bg-blue-700 cursor-pointer"
+            }`}
+            type="submit"
+            disabled={isSubmitting}
+        >
+            {#if isSubmitting}
+                Submitting...
+            {:else if form?.success === true || form?.success === false}
+                {form.message}
+            {:else}
+                Register
+            {/if}
+        </button>
 
     </form>
 
