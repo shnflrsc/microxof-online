@@ -25,7 +25,8 @@
 <main class="p-8 items-center">
 
     <img class="w-10/12 md:w-3/12 mb-8 place-self-center" src={qrCode} alt="QR Code">
-    <p class="text-gray-700 text-center md:text-xl">Scan the QR code above to pay the <span class="font-bold">50.00 PHP</span> membership fee.</p>
+    <p class="text-lg text-gray-700 font-bold place-self-center">OPTIONAL</p>
+    <p class="text-gray-700 text-center md:text-xl mt-4">Scan the QR code above to pay the <span class="font-bold">50.00 PHP</span> membership fee.</p>
 
     <div class="flex flex-col md:flex-row justify-center my-16 gap-y-4 md:gap-x-8">
         <article class="bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-full md:w-5/12">
