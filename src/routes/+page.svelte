@@ -32,9 +32,9 @@
             <p class="text-xl font-bold text-center text-blue-500">How to join BulSU Microsoft Student Community</p>
             <div class="place-self-center mt-8">
                 <p class="text-gray-700">
-                    1. Scan the QR code above and pay the <span class="font-bold">50.00 PHP</span> membership fee.<br>
-                    2. Save the reference number of your payment.<br>
-                    3. Fill out the form below and submit it.<br>
+                    1. Scan the QR code above and pay the <span class="font-bold">50.00 PHP</span> membership fee. This is <span class="font-bold">OPTIONAL</span>, but we encourage you to do so to support our community in providing better experiences.<br>
+                    2. Save the reference number of your payment. If not paying, type <span class="font-bold">N/A</span>.<br>
+                    3. Fill out the form below with your details and submit. Make sure it says that your submission is successful.<br>
                     4. Wait for the confirmation of your membership application through email.
                 </p>
             </div>
