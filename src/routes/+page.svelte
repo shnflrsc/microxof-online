@@ -25,20 +25,21 @@
 <main class="p-8 items-center">
 
     <img class="w-10/12 md:w-3/12 mb-8 place-self-center" src={qrCode} alt="QR Code">
+    <p class="text-gray-700 text-center md:text-xl">Scan the QR code above to pay the <span class="font-bold">50.00 PHP</span> membership fee.</p>
 
-    <div class="flex flex-col md:flex-row justify-center gap-x-8">
-        <article class="my-8 bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-5/12">
+    <div class="flex flex-col md:flex-row justify-center my-16 gap-y-4 md:gap-x-8">
+        <article class="bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-full md:w-5/12">
             <p class="text-xl font-bold text-center text-blue-500">How to join BulSU Microsoft Student Community</p>
             <div class="place-self-center mt-8">
                 <p class="text-gray-700">
-                    1. Scan the QR code above and pay <span class="font-bold">50.00 PHP</span> to our GCash account.<br>
+                    1. Scan the QR code above and pay the <span class="font-bold">50.00 PHP</span> membership fee.<br>
                     2. Save the reference number of your payment.<br>
                     3. Fill out the form below and submit it.<br>
                     4. Wait for the confirmation of your membership application through email.
                 </p>
             </div>
         </article>
-        <article class="my-8 bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-5/12">
+        <article class="bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-full md:w-5/12">
             <p class="text-xl font-bold text-center text-blue-500">Member's Benefits</p>
             <div class="place-self-center mt-8">
                 <p class="text-gray-700">
