@@ -61,20 +61,20 @@ export const actions: Actions = {
       if (!insertedRows || insertedRows.length === 0) {
         return fail(500, {
           success: false,
-          message: "Registration failed. Please try again.",
+          message: "Submission failed. Please try again.",
         });
       }
 
       return {
         success: true,
-        message: "Registration successful!",
+        message: "Submission successful!",
       };
     } catch (error: unknown) {
       console.error("CRITICAL DRIZZLE ERROR:", error);
 
       return fail(500, {
         success: false,
-        message: "Registration failed. Please try again.",
+        message: "Submission failed. Please try again.",
       });
     }
   },
