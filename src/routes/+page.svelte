@@ -26,6 +26,32 @@
 
     <img class="w-10/12 md:w-3/12 mb-8 place-self-center" src={qrCode} alt="QR Code">
 
+    <div class="flex flex-col md:flex-row justify-center gap-x-8">
+        <article class="my-8 bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-5/12">
+            <p class="text-xl font-bold text-center text-blue-500">How to join BulSU Microsoft Student Community</p>
+            <div class="place-self-center mt-8">
+                <p class="text-gray-700">
+                    1. Scan the QR code above and pay <span class="font-bold">50.00 PHP</span> to our GCash account.<br>
+                    2. Save the reference number of your payment.<br>
+                    3. Fill out the form below and submit it.<br>
+                    4. Wait for the confirmation of your membership application through email.
+                </p>
+            </div>
+        </article>
+        <article class="my-8 bg-neutral-100 border-4 border-blue-500 rounded-2xl p-8 w-5/12">
+            <p class="text-xl font-bold text-center text-blue-500">Member's Benefits</p>
+            <div class="place-self-center mt-8">
+                <p class="text-gray-700">
+                    1. <span class="font-bold">Workshops & Seminars</span> - Join hands-on events that sharpen your skills and prep you for the real world.<br>
+                    2. <span class="font-bold">Leadership & Growth</span> - Step up, speak out, or simply grow—we've got the space and support for it.<br>
+                    3. <span class="font-bold">Career & Connections</span> - Meet mentors, alumni, and industry pros who can open doors for your future.<br>
+                    4. <span class="font-bold">Perks & Resources</span> - Get access to tools, materials, and exclusive perks just for being with MSC.<br>
+                    5. <span class="font-bold">Belonging & Community</span> - Connect with students across all courses. There's a place for you here.
+                </p>
+            </div>
+        </article>
+    </div>
+
     <form class="w-11/12 place-self-center" method="post" action="?/submit" use:enhance={handleEnhance}>
 
         <ul class="grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-x-2 gap-y-2 *:flex *:flex-col *:gap-y-2">
