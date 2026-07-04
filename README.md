@@ -1,42 +1,69 @@
-# sv
+# MicroXof (Online)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+MicroXof is the official membership registration microsite for the **BulSU Microsoft Student Community (BulSU MSC)**. This is the **online version**, hosted on Vercel and served at [bulsumsc.org/microxof](https://bulsumsc.org/microxof).
 
-## Creating a project
+It replaces the org's previous paper-based and Excel-based membership registration process, which led to lost files, illegibility issues, and data management problems for the finance committee.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```sh
-# create a new project
-npx sv create my-app
+- Digital membership registration form for BulSU MSC applicants
+- Structured, centralized data collection (no more lost papers or scattered spreadsheets)
+- Deployed on Vercel with a custom domain
+- Built with SvelteKit
+
+## Tech Stack
+
+- **Framework:** SvelteKit
+- **Hosting:** Vercel
+- **Domain:** bulsumsc.org/microxof
+
+## Getting Started
+
+### Prerequisites
+
+- Bun
+
+### Installation
+
+```bash
+git clone https://github.com/shnflrsc/microxof-online.git
+cd microxof-online
+bun install
 ```
 
-To recreate this project with the same configuration:
+### Environment Variables
 
-```sh
-# recreate this project
-bun x sv@0.16.1 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:forms" sveltekit-adapter="adapter:vercel" drizzle="database:postgresql+postgresql:postgres.js+docker:no" --install bun microxof-online
+Create a `.env` file in the project root. Fill in the values like database and upstash credentials:
+
+```env
+DATABASE_URL=
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
 ```
 
-## Developing
+### Running Locally
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+bun dev
 ```
 
-## Building
+The app will be available at `http://localhost:5173` by default.
 
-To create a production version of your app:
+### Building for Production
 
-```sh
-npm run build
+```bash
+bun run build
+bun run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This project is deployed on [Vercel](https://vercel.com). Pushes to the main branch trigger an automatic deployment. The custom domain is configured as `bulsumsc.org/microxof`.
+
+## Related Project
+
+This is the online counterpart to the **offline, Dockerized version** of MicroXof, built to keep registration functional during campus connectivity issues.
+
+## Maintainer
+
+Built for BulSU MSC by Shane.
