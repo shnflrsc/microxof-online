@@ -9,9 +9,32 @@ import {
   type College,
   registrations as registrationsTable,
 } from "$lib/server/db/schema";
+import { dailyLimiter, minuteLimiter } from "$lib/server/ratelimit";
 
 export const actions: Actions = {
   submit: async (event) => {
+    const ip = event.getClientAddress() || "127.0.0.1";
+
+    try {
+      const dailyCheck = await dailyLimiter.limit(ip);
+      if (!dailyCheck.success) {
+        return fail(429, {
+          success: false,
+          message: "Access denied. This IP is blocked for 24 hours due to excessive form submissions.",
+        });
+      }
+
+      const minuteCheck = await minuteLimiter.limit(ip);
+      if (!minuteCheck.success) {
+        return fail(429, {
+          success: false,
+          message: "Too many requests. Please wait a minute before trying again.",
+        });
+      }
+    } catch (error) {
+      console.error("Rate limiter error:", error);
+    }
+
     const formData: FormData = await event.request.formData();
     const firstName = formData.get("first_name")?.toString() ?? "";
     const middleName = formData.get("middle_name")?.toString() ?? "";
@@ -34,7 +57,6 @@ export const actions: Actions = {
     }
 
     try {
-
       const newRegistration: NewRegistration = {
         firstName: firstName,
         middleName: middleName,

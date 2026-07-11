@@ -15,9 +15,9 @@ export const minuteLimiter = new Ratelimit({
   prefix: "@upstash/minute",
 });
 
-// 2. The new 24-hour ban limiter (5 requests per 1 day)
+// 2. The new 24-hour ban limiter (20 requests per 1 day)
 export const dailyLimiter = new Ratelimit({
   redis: redisClient,
-  limiter: Ratelimit.slidingWindow(5, "1 d"),
+  limiter: Ratelimit.slidingWindow(20, "1 d"),
   prefix: "@upstash/daily",
 });

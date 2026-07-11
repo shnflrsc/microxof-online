@@ -2,9 +2,9 @@ import { type Handle } from '@sveltejs/kit';
 import { minuteLimiter, dailyLimiter } from '$lib/server/ratelimit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-  const isApiOrAction = event.url.pathname.startsWith('/api') || event.request.method === 'POST';
+  const isApi = event.url.pathname.startsWith('/api');
 
-  if (isApiOrAction) {
+  if (isApi) {
     const ip = event.getClientAddress() || '127.0.0.1';
     
     try {
